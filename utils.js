@@ -14,6 +14,8 @@ var debug = require('debug')('app:utils:' + process.pid),
 
 client.on('error', function (err) {
     debug(err);
+    console.log("Not connected");
+    console.log(err);
     process.exit(1);
 });
 
