@@ -18,7 +18,7 @@ client.on('error', function (err) {
 
 client.on('connect', function () {
     debug("Redis successfully connected");
-},2000);
+},200);
 
 /**
  * Find the authorization headers from the headers in the request
