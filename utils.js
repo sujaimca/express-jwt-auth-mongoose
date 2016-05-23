@@ -14,17 +14,13 @@ var debug = require('debug')('app:utils:' + process.pid),
 
 client.on('error', function (err) {
     debug(err);
+    process.exit(1);
 });
 
-var con = false;
 client.on('connect', function () {
     debug("Redis successfully connected");
-    con = true;
-},200);
+});
 
-if (!con) {
-    process.exit(1);
-}
 /**
  * Find the authorization headers from the headers in the request
  *
