@@ -16,10 +16,15 @@ client.on('error', function (err) {
     debug(err);
 });
 
+var con = false;
 client.on('connect', function () {
     debug("Redis successfully connected");
+    con = true;
 },200);
 
+if (!con) {
+    process.exit(1);
+}
 /**
  * Find the authorization headers from the headers in the request
  *
