@@ -21,6 +21,7 @@ client.on('error', function (err) {
 
 client.on('connect', function () {
     debug("Redis successfully connected");
+    console.log("Connected");
 });
 
 /**
