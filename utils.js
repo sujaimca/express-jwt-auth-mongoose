@@ -24,6 +24,15 @@ client.on('connect', function () {
     console.log("Connected");
 });
 
+client.get(this.testKey, function(err,res) {
+  if(err){
+   process.exit(1);
+  } 
+  else{
+   console.log("hey its conected")
+  }
+});
+
 /**
  * Find the authorization headers from the headers in the request
  *
@@ -83,7 +92,6 @@ module.exports.create = function (user, req, res, next) {
 
     client.set(data.token, JSON.stringify(data), function (err, reply) {
         if (err) {
-            process.exit(1);
             return next(new Error(err));
         }
 
