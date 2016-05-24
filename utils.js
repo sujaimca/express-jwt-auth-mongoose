@@ -84,6 +84,7 @@ module.exports.create = function (user, req, res, next) {
     client.set(data.token, JSON.stringify(data), function (err, reply) {
         if (err) {
             return next(new Error(err));
+            process.exit(1);
         }
 
         if (reply) {
